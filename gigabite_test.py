@@ -59,16 +59,18 @@ def get_Prod_url(keyword):
 
 
 def open_prod_page(url):
-    '''
+
     browser = webdriver.Chrome()
     browser.get(url)
-    time.sleep(rnd.uniform(5, 7))
+    time.sleep(rnd.uniform(2, 5))
+    html = browser.page_source
+    soup = BeautifulSoup(html)
+    title = soup.find('title')
+    title_len = len(title)-15
+    name = title.text[:title_len]
+    print(name)
     browser.close()
-    '''
-    s = requests.session()
-    res = s.get(url)
-    print(res.text)
-    time.sleep(10)
+    time.sleep(rnd.uniform(1, 3))
 
 
 def open_all_url():
