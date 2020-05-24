@@ -41,9 +41,9 @@ def get_Prod_url(keyword):
         email = driver.find_element_by_xpath("//input[@name='fm-login-id']")
         password = driver.find_element_by_xpath(
             "//input[@name='fm-login-password']")
-        email.send_keys('b10623009@yuntech.edu.tw')
+        email.send_keys('test@mail.com')#帳號
         time.sleep(2)
-        password.send_keys('testpassword')
+        password.send_keys('password')#密碼
         time.sleep(rnd.uniform(3, 5))
         # form = driver.find_element_by_xpath("//form[@class='login-form']")
         # form.submit()
